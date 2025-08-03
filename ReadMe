@@ -1,0 +1,64 @@
+# MatchMate 👥💍
+
+**MatchMate** is a matrimonial-style Android app that allows users to swipe through match cards, accept or decline matches, and persist those decisions even offline.
+
+---
+
+## 🚀 Features
+
+- 🧠 MVVM architecture using ViewModel, LiveData, Repository
+- 🌐 Fetch user profiles from [randomuser.me](https://randomuser.me/)
+- 📦 Persist match decisions using Room DB (offline support)
+- 🖼️ Load profile pictures using Glide
+- 🔄 Retrofit for API integration
+- 📱 Clean UI with RecyclerView + ViewBinding
+
+---
+
+## 🏗️ Tech Stack
+
+| Layer          | Tool/Library                          |
+|----------------|---------------------------------------|
+| UI             | RecyclerView, ConstraintLayout, ViewBinding |
+| Network        | Retrofit + Gson                       |
+| Image Loading  | Glide                                 |
+| Local DB       | Room                                  |
+| Architecture   | MVVM (ViewModel, Repository, LiveData)|
+| Language       | Kotlin                                |
+
+---
+
+## 📦 Project Structure
+
+
+---
+
+## 🛠️ How to Run
+
+1. Clone this repo:
+    ```bash
+    git clone https://github.com/YOUR_USERNAME/MatchMate.git
+    ```
+
+2. Open in **Android Studio**
+3. Ensure the following are enabled in `build.gradle.kts`:
+    ```kotlin
+    buildFeatures {
+        viewBinding = true
+    }
+    ```
+
+4. Add this permission in your `AndroidManifest.xml`:
+    ```xml
+    <uses-permission android:name="android.permission.INTERNET" />
+    ```
+
+5. Run the app on an emulator or device with internet access
+
+---
+
+## 📄 License
+
+This project is open source and free to use under the [MIT License](LICENSE).
+
+---
