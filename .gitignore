@@ -1,0 +1,30 @@
+# Kotlin
+*.class
+*.log
+*.jar
+*.war
+*.ear
+*.iml
+.gradle
+/local.properties
+/.idea/
+/build/
+/captures/
+/*.iml
+
+# Android/Studio
+.gradle/
+.idea/
+build/
+captures/
+.DS_Store
+*.apk
+*.ap_
+output.json
+
+# Keystore files
+*.jks
+*.keystore
+
+# Others
+local.properties
