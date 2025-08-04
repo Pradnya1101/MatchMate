@@ -1,13 +1,16 @@
 package com.example.matchmate.view
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.service.autofill.UserData
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.matchmate.data.db.UserEntity
 import com.example.matchmate.databinding.LayoutItemBinding
+import androidx.core.graphics.toColorInt
 
 class MatchAdapter( private var userList: List<UserEntity>,
                     private val onActionClick: (UserEntity, String) -> Unit) :
@@ -33,15 +36,33 @@ class MatchAdapter( private var userList: List<UserEntity>,
                 .load(user.imageUrl)
                 .into(imgProfile)
 
-            btnAccept.setOnClickListener { onActionClick(user, "accepted") }
-            btnDecline.setOnClickListener { onActionClick(user, "declined") }
-
-            // Update UI based on status
-            when (user.status) {
-                "accepted" -> tvStatus.text = "Member Accepted"
-                "declined" -> tvStatus.text = "Member Declined"
-                else -> tvStatus.text = ""
+            btnAccept.setOnClickListener {
+                Toast.makeText(it.context, "Accepted", Toast.LENGTH_SHORT).show()
+                onActionClick(user, "accepted")
             }
+
+            btnDecline.setOnClickListener {
+                Toast.makeText(it.context, "Declined", Toast.LENGTH_SHORT).show()
+                onActionClick(user, "declined")
+            }
+
+
+            btnAccept.setBackgroundColor(Color.LTGRAY)
+            btnDecline.setBackgroundColor(Color.LTGRAY)
+            btnAccept.setTextColor(Color.BLACK)
+            btnDecline.setTextColor(Color.BLACK)
+
+            when (user.status) {
+                "accepted" -> {
+                    btnAccept.setBackgroundColor("#4CAF50".toColorInt())
+                    btnAccept.setTextColor(Color.WHITE)
+                }
+                "declined" -> {
+                    btnDecline.setBackgroundColor("#F44336".toColorInt())
+                    btnDecline.setTextColor(Color.WHITE)
+                }
+            }
+
         }
     }
 

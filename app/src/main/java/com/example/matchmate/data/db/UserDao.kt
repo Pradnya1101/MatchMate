@@ -13,4 +13,13 @@ interface UserDao {
 
     @Update
     suspend fun updateUser(user: UserEntity)
+
+    @Query("SELECT * FROM users WHERE status IS NULL OR status = ''")
+    fun getUnreviewedUsers(): LiveData<List<UserEntity>>
+
+    @Query("SELECT * FROM users WHERE status = 'accepted'")
+    fun getAcceptedUsers(): LiveData<List<UserEntity>>
+
+    @Query("SELECT * FROM users WHERE status = 'declined'")
+    fun getDeclinedUsers(): LiveData<List<UserEntity>>
 }

@@ -3,67 +3,74 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    card_view:cardCornerRadius="12dp"
-    android:layout_margin="8dp"
-    android:elevation="6dp">
+    android:layout_margin="12dp"
+    android:elevation="8dp"
+    card_view:cardCornerRadius="16dp">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="12dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <ImageView
             android:id="@+id/imgProfile"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="200dp"
+            android:layout_height="180dp"
             android:layout_gravity="center"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background" />
+            android:background="@drawable/ic_person_acc"
+            android:clipToOutline="true"
+            android:contentDescription="User photo" />
 
         <TextView
             android:id="@+id/tvName"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:text="Name Placeholder" />
 
         <TextView
             android:id="@+id/tvLocation"
-            android:textSize="14sp"
-            android:layout_marginTop="4dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:text="City, Country" />
 
-        <TextView
-            android:id="@+id/tvStatus"
-            android:textSize="14sp"
-            android:textColor="#4CAF50"
-            android:layout_marginTop="4dp"
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="1dp"
+            android:layout_marginVertical="12dp"
+            android:background="#E0E0E0" />
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAccept"
-                android:layout_weight="1"
-                android:text="Accept"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/btnDecline"
-                android:layout_weight="1"
-                android:text="Decline"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp" />
+                android:layout_weight="1"
+                android:text="Accept"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/teal_700" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDecline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:text="Decline"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@android:color/holo_red_dark" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

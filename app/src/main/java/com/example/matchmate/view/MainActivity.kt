@@ -1,11 +1,17 @@
 package com.example.matchmate.view
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStore
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.matchmate.R
 import com.example.matchmate.data.db.AppDatabase
+import com.example.matchmate.data.db.UserEntity
 import com.example.matchmate.data.model.UserData
 import com.example.matchmate.databinding.ActivityMainBinding
 import com.example.matchmate.repository.HomeRepository
@@ -25,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         val repository = HomeRepository(dao)
         val factory = HomeViewModelFactory(repository)
         viewModel = ViewModelProvider(this, factory)[HomeViewModel::class.java]
+
         initAdapter()
         observeViewModel()
 
@@ -43,4 +50,29 @@ class MainActivity : AppCompatActivity() {
             matchAdapter.updateList(users)
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.filter_all -> {
+                viewModel.loadUsers("all")
+                true
+            }
+            R.id.filter_accepted -> {
+                viewModel.loadUsers("accepted")
+                true
+            }
+            R.id.filter_declined -> {
+                viewModel.loadUsers("declined")
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+
 }

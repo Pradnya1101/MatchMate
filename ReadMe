@@ -1,64 +1,69 @@
-# MatchMate 👥💍
-
-**MatchMate** is a matrimonial-style Android app that allows users to swipe through match cards, accept or decline matches, and persist those decisions even offline.
+Here’s a **refined and professional version** of your `README.md` suitable for sharing with a company—clean, formal, and without emojis or unnecessary flair:
 
 ---
 
-## 🚀 Features
+# MatchMate
 
-- 🧠 MVVM architecture using ViewModel, LiveData, Repository
-- 🌐 Fetch user profiles from [randomuser.me](https://randomuser.me/)
-- 📦 Persist match decisions using Room DB (offline support)
-- 🖼️ Load profile pictures using Glide
-- 🔄 Retrofit for API integration
-- 📱 Clean UI with RecyclerView + ViewBinding
+**MatchMate** is a matrimonial-style Android application that displays potential user matches through cards. Users can accept or decline profiles, and their decisions are stored locally to support offline usage.
 
 ---
 
-## 🏗️ Tech Stack
+## Features
 
-| Layer          | Tool/Library                          |
-|----------------|---------------------------------------|
-| UI             | RecyclerView, ConstraintLayout, ViewBinding |
-| Network        | Retrofit + Gson                       |
-| Image Loading  | Glide                                 |
-| Local DB       | Room                                  |
-| Architecture   | MVVM (ViewModel, Repository, LiveData)|
-| Language       | Kotlin                                |
+* MVVM architecture with ViewModel, LiveData, and Repository pattern
+* User profiles fetched from [randomuser.me](https://randomuser.me/)
+* Local data persistence using Room Database
+* API integration using Retrofit
+* Image loading via Glide
+* Clean UI using RecyclerView and ViewBinding
 
 ---
 
-## 📦 Project Structure
+## Tech Stack
 
-
----
-
-## 🛠️ How to Run
-
-1. Clone this repo:
-    ```bash
-    git clone https://github.com/YOUR_USERNAME/MatchMate.git
-    ```
-
-2. Open in **Android Studio**
-3. Ensure the following are enabled in `build.gradle.kts`:
-    ```kotlin
-    buildFeatures {
-        viewBinding = true
-    }
-    ```
-
-4. Add this permission in your `AndroidManifest.xml`:
-    ```xml
-    <uses-permission android:name="android.permission.INTERNET" />
-    ```
-
-5. Run the app on an emulator or device with internet access
+| Layer         | Tools/Libraries                             |
+| ------------- | ------------------------------------------- |
+| UI            | RecyclerView, ConstraintLayout, ViewBinding |
+| Networking    | Retrofit with Gson                          |
+| Image Loading | Glide                                       |
+| Local Storage | Room Database                               |
+| Architecture  | MVVM (ViewModel, Repository, LiveData)      |
+| Language      | Kotlin                                      |
 
 ---
 
-## 📄 License
+## Getting Started
 
-This project is open source and free to use under the [MIT License](LICENSE).
+To run the application locally:
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/MatchMate.git
+   ```
+
+2. **Open the project** in Android Studio
+
+3. **Ensure ViewBinding is enabled** in `build.gradle.kts`:
+
+   ```kotlin
+   buildFeatures {
+       viewBinding = true
+   }
+   ```
+
+4. **Add required permissions** in `AndroidManifest.xml`:
+
+   ```xml
+   <uses-permission android:name="android.permission.INTERNET" />
+   ```
+
+5. **Run the app** on an emulator or device with internet access
+
+---
+
+## License
+
+This project is open source and distributed under the [MIT License](LICENSE).
 
 ---

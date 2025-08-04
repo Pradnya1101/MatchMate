@@ -10,22 +10,35 @@ class HomeRepository(private val userDao: UserDao) {
     val users: LiveData<List<UserEntity>> = userDao.getAllUsers()
 
     suspend fun fetchAndSaveUsers() {
-        val response = RetrofitClient.apiService.getUsers()
-        val userEntities = response.results.map {
-            UserEntity(
-                email = it.email,
-                firstName = it.name.first,
-                lastName = it.name.last,
-                imageUrl = it.picture.large,
-                city = it.location.city,
-                country = it.location.country,
-                status = null
-            )
+        try {
+            val response = RetrofitClient.apiService.getUsers()
+            val userEntities = response.results.map {
+                UserEntity(
+                    email = it.email,
+                    firstName = it.name.first,
+                    lastName = it.name.last,
+                    imageUrl = it.picture.large,
+                    city = it.location.city,
+                    country = it.location.country,
+                    status = null
+                )
+            }
+            userDao.insertAll(userEntities)
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
-        userDao.insertAll(userEntities)
     }
 
     suspend fun updateUser(user: UserEntity) {
         userDao.updateUser(user)
     }
+
+    fun getUsersByFilter(filter: String): LiveData<List<UserEntity>> {
+        return when (filter) {
+            "accepted" -> userDao.getAcceptedUsers()
+            "declined" -> userDao.getDeclinedUsers()
+            else -> userDao.getAllUsers()
+        }
+    }
+
 }
