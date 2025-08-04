@@ -59,8 +59,13 @@ To run the application locally:
    ```
 
 5. **Run the app** on an emulator or device with internet access
-
+``
 ---
+## Screenshots
+![MainScreen Screen](screenshots/Screen_7.png)
+![Filter Screen](screenshots/Screen_9.png)
+![Filtered Data](screenshots/Screen_8.png)
+![Filtered Data](screenshots/Screen_6.png)
 
 ## License
 
