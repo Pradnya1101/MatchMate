@@ -1,7 +1,3 @@
-Here’s a **refined and professional version** of your `README.md` suitable for sharing with a company—clean, formal, and without emojis or unnecessary flair:
-
----
-
 # MatchMate
 
 **MatchMate** is a matrimonial-style Android application that displays potential user matches through cards. Users can accept or decline profiles, and their decisions are stored locally to support offline usage.
