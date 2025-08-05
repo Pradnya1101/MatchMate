@@ -1,4 +1,4 @@
-# MatchMate
+## MatchMate
 
 **MatchMate** is a matrimonial-style Android application that displays potential user matches through cards. Users can accept or decline profiles, and their decisions are stored locally to support offline usage.
 
@@ -58,10 +58,16 @@ To run the application locally:
 ``
 ---
 ## Screenshots
-![MainScreen Screen](screenshots/Screen_7.png)
-![Filter Screen](screenshots/Screen_9.png)
-![Filtered Data](screenshots/Screen_8.png)
-![Filtered Data](screenshots/Screen_6.png)
+<p align="center">
+  <img src="screenshots/Screen_7.png" width="38%" alt="Main Screen" style="margin: 10px;"/>
+  <img src="screenshots/Screen_9.png" width="38%" alt="Filter Screen" style="margin: 10px;"/>
+</p>
+
+<p align="center">
+  <img src="screenshots/Screen_8.png" width="38%" alt="Filtered Data 1" style="margin: 10px;"/>
+  <img src="screenshots/Screen_6.png" width="38%" alt="Filtered Data 2" style="margin: 10px;"/>
+</p>
+
 
 ## License
 
